@@ -1,0 +1,6 @@
+magic_wand:
+  cost: 5
+fire_staff:
+  cost: 15
+ice_orb:
+  cost: 10

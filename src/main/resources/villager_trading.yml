@@ -1,0 +1,57 @@
+trading_enabled: true
+default_trades_allowed: false
+
+villagers:
+  - name: "Боб"
+    trades_enabled: true
+    allowed_trades:
+      - "minecraft:bread"
+      - "minecraft:emerald"
+
+  - profession: "farmer"
+    trades_enabled: true
+    trades:
+      - level: 1
+        buy:
+#          - item: "minecraft:wheat"
+#            amount: 20
+        price: 10
+        sell:
+          item: "minecraft:bread"
+          amount: 2
+
+      - level: 2
+        buy:
+          - item: "minecraft:emerald"
+            amount: 3
+        sell:
+          item: "minecraft:golden_carrot"
+          amount: 1
+  - profession: "armorer"
+    trades_enabled: false
+  - profession: "butcher"
+    trades_enabled: false
+  - profession: "cartographer"
+    trades_enabled: false
+  - profession: "cleric"
+    trades_enabled: false
+  - profession: "fisherman"
+    trades_enabled: false
+  - profession: "fletcher"
+    trades_enabled: false
+  - profession: "leatherworker"
+    trades_enabled: false
+  - profession: "librarian"
+    trades_enabled: false
+  - profession: "mason"
+    trades_enabled: false
+  - profession: "nitwit"
+    trades_enabled: false
+  - profession: "shepherd"
+    trades_enabled: false
+  - profession: "toolsmith"
+    trades_enabled: false
+  - profession: "weaponsmith"
+    trades_enabled: false
+  - profession: "none"
+    trades_enabled: false

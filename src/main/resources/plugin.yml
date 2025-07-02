@@ -1,0 +1,62 @@
+name: WebAuth
+#depend: [ExecutableItems]
+main: lv.funcatchers.WebAuth
+version: 1.0
+api-version: 1.20
+commands:
+  mc-login:
+    usage: /mc-login <username> <password>
+    description: Авторизация через сайт FunCatchersLV
+  mc-balance:
+    usage: /mc-balance
+    description: Показать баланс игрока
+  mc-pay:
+      usage: /mc-pay <ник> <сумма>
+      description: Перевод валюты
+
+  mc-upgrade:
+    usage: /mc-upgrade <stat>
+    description: Прокачка RPG характеристик
+
+  mc-stats:
+    usage: /mc-stats
+    description: Показать характеристики и доступные очки
+
+  mc-reloadstats:
+    usage: /mc-reloadstats
+    description: Перезагрузить эффекты с API
+
+  hp:
+    description: Управление кастомным здоровьем
+    usage: /hp <set|heal|damage> <значение>
+    permission: rpghealth.hp
+
+  mc-recalc:
+    description: Управление кастомным здоровьем
+    usage: /mc-recalc
+
+  coins:
+    description: Синхронизация сайта и игровых монет
+    usage: /coins sync
+    permission: webauth.coins
+    permission-message: §cНет прав
+
+  updateactivities:
+    description: Обновить голограмму активностей
+    usage: /updateactivities [страница]
+
+  joinactivity:
+    description: Присоединиться к активности по ID
+    usage: /joinactivity
+
+  activities:
+    description: Открыть меню активностей
+    usage: /activities
+
+  hp-add:
+    usage: /hp-add <player> <amount>
+    description: Восстановить HP
+
+  hp-temp:
+    usage: /hp-temp <player> <amount> <seconds>
+    description: Временное увеличение HP

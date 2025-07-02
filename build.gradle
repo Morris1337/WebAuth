@@ -1,0 +1,66 @@
+plugins {
+    id 'java'
+}
+
+group = 'lv.funcatchers'
+version = '1.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+
+    // PaperMC репозиторий
+    maven {
+        name = 'papermc'
+        url = 'https://repo.papermc.io/repository/maven-public/'
+    }
+
+    // LuckPerms репозиторий
+    maven {
+        name = 'luckperms'
+        url = 'https://repo.lucko.me'
+    }
+}
+
+dependencies {
+    // Paper API вместо Spigot
+    compileOnly 'io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT'
+    compileOnly files('libs/ExecutableItems-7.25.6.15.jar')  // Исправлено: путь к ExecutableItems
+    compileOnly files('libs/SCore-5.25.6.21.jar')
+
+    // LuckPerms API
+    compileOnly 'net.luckperms:api:5.4'
+
+    // HTTP + JSON
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'org.json:json:20231013'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    archiveBaseName.set("WebAuthFinal")
+
+    manifest {
+        attributes(
+                'Main-Class': 'lv.funcatchers.WebAuth'
+        )
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
